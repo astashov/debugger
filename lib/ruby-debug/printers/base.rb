@@ -4,7 +4,7 @@ module Printers
     class MissedPath < StandardError; end
     class MissedArgument < StandardError; end
 
-    SEPARATOR = "."
+    SEPARATOR = "." unless const_defined?("SEPARATOR")
 
     def type
       self.class.name.split("::").last.downcase
